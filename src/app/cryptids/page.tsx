@@ -1,5 +1,6 @@
 import Layout from '../../components/layout/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -76,11 +77,13 @@ export default function Cryptids() {
             {cryptids.slice(0, 4).map((cryptid) => (
               <div key={cryptid.name} className="collone">
                 <Link href={cryptid.href} className="liensMenu">
-                  <img 
-                    className="iconiqueIcons" 
-                    src={cryptid.image} 
-                    alt={cryptid.name}
-                  />
+                  <Image 
+                      className="iconiqueIcons" 
+                      src={cryptid.image} 
+                      alt={cryptid.name}
+                      width={100}
+                      height={100}
+                    />
                 </Link>
                 <Link href={cryptid.href} className="liensMenu">
                   {cryptid.name}
@@ -94,11 +97,13 @@ export default function Cryptids() {
             {cryptids.slice(4, 6).map((cryptid) => (
               <div key={cryptid.name} className="collone">
                 <Link href={cryptid.href} className="liensMenu">
-                  <img 
-                    className="iconiqueIcons" 
-                    src={cryptid.image} 
-                    alt={cryptid.name}
-                  />
+                  <Image 
+                      className="iconiqueIcons" 
+                      src={cryptid.image} 
+                      alt={cryptid.name}
+                      width={100}
+                      height={100}
+                    />
                 </Link>
                 <Link href={cryptid.href} className="liensMenu">
                   {cryptid.name}

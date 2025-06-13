@@ -1,5 +1,6 @@
 import Layout from '../../../components/layout/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,11 +11,11 @@ export const metadata: Metadata = {
 const ProfileStats = () => (
   <aside className="profileAside">
     <div className="center">
-      <img className="imageNameLizt" src="/images/monsterName/liztter.png" alt="LIZT_TER Name" />
+      <Image className="imageNameLizt" src="/images/monsterName/liztter.png" alt="LIZT_TER Name" width={300} height={100} />
     </div>
     <div className="barSectioning"></div>
 
-    <img className="imageProfile" src="/images/monsterIcon/iconLiztter.png" alt="LIZT_TER" />
+    <Image className="imageProfile" src="/images/monsterIcon/iconLiztter.png" alt="LIZT_TER" width={200} height={200} />
     <p className="quoteProfile quoteProfileColor">
       <i>❝ My son. My creation. ❞</i>
     </p>
@@ -359,7 +360,7 @@ export default function LiztterPage() {
             <h2 className="linear-text-gradient titleD">Audio</h2>
             <div className="barSectioning4"></div>
             <p className="textI linear-textT-gradient">
-              This section is still under construction, as we haven't started working on the game.
+              This section is still under construction, as we haven&apos;t started working on the game.
             </p>
             <br />
           </div>
@@ -369,7 +370,7 @@ export default function LiztterPage() {
             <h2 className="linear-text-gradient titleD">Strategy</h2>
             <div className="barSectioning4"></div>
             <p className="textI linear-textT-gradient">
-              This section is still under construction, as we haven't started working on the game. <br />
+              This section is still under construction, as we haven&apos;t started working on the game.
             </p>
             <br />
           </div>
@@ -408,7 +409,7 @@ export default function LiztterPage() {
             <h2 className="linear-text-gradient titleD">Gallery</h2>
             <div className="barSectioning4"></div>
             <p className="textI linear-textT-gradient">
-              This section is still under construction, as we haven't started working on the game.
+              This section is still under construction, as we haven&apos;t started working on the game.
             </p>
             <br />
           </div>

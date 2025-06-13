@@ -1,5 +1,6 @@
 import Layout from '../../components/layout/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -75,10 +76,12 @@ export default function Survivors() {
           <div className="iconTable">
             {survivors.slice(0, 4).map((survivor) => (
               <div key={survivor.name} className="collone">
-                <img 
+                <Image 
                   className="iconiqueIcons" 
                   src={survivor.image} 
                   alt={survivor.name}
+                  width={100}
+                  height={100}
                 />
                 <Link href={survivor.href} className="liensMenu">
                   {survivor.name}
@@ -91,10 +94,12 @@ export default function Survivors() {
           <div className="iconTable">
             {survivors.slice(4, 6).map((survivor) => (
               <div key={survivor.name} className="collone">
-                <img 
+                <Image 
                   className="iconiqueIcons" 
                   src={survivor.image} 
                   alt={survivor.name}
+                  width={100}
+                  height={100}
                 />
                 <Link href={survivor.href} className="liensMenu">
                   {survivor.name}

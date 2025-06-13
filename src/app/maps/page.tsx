@@ -1,5 +1,6 @@
 import Layout from '../../components/layout/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -75,10 +76,12 @@ export default function Maps() {
           <div className="iconTable">
             {maps.slice(0, 4).map((map) => (
               <div key={map.name} className="collone">
-                <img 
+                <Image 
                   className="iconiqueIcons" 
                   src={map.image} 
                   alt={map.name}
+                  width={100}
+                  height={100}
                 />
                 <Link href={map.href} className="liensMenu">
                   {map.name}
@@ -91,10 +94,12 @@ export default function Maps() {
           <div className="iconTable">
             {maps.slice(4, 6).map((map) => (
               <div key={map.name} className="collone">
-                <img 
+                <Image 
                   className="iconiqueIcons" 
                   src={map.image} 
                   alt={map.name}
+                  width={100}
+                  height={100}
                 />
                 <Link href={map.href} className="liensMenu">
                   {map.name}

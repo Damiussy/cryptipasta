@@ -1,5 +1,6 @@
 import Layout from '../../components/layout/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -77,10 +78,12 @@ export default function Perks() {
           <div className="iconTable">
             {perks.slice(0, 4).map((perk) => (
               <div key={perk.name} className="collone">
-                <img 
+                <Image 
                   className="iconiqueIcons" 
                   src={perk.image} 
                   alt={perk.name}
+                  width={100}
+                  height={100}
                 />
                 <Link href={perk.href} className="liensMenu">
                   {perk.name}
@@ -93,10 +96,12 @@ export default function Perks() {
           <div className="iconTable">
             {perks.slice(4, 6).map((perk) => (
               <div key={perk.name} className="collone">
-                <img 
+                <Image 
                   className="iconiqueIcons" 
                   src={perk.image} 
                   alt={perk.name}
+                  width={100}
+                  height={100}
                 />
                 <Link href={perk.href} className="liensMenu">
                   {perk.name}
