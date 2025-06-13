@@ -30,9 +30,9 @@ const survivors = [
     href: '/survivors/mark'
   },
   {
-    name: '????',
+    name: 'Dalibor',
     image: '/images/placeholder.png',
-    href: '/survivors/unknown'
+    href: '/survivors/dalibor'
   },
   {
     name: 'Spy',

@@ -12,6 +12,7 @@ export default function Header() {
             צפו לבלתי צפוי.
           </h2>
         </div>
+      <br />
       </div>
     );
   }
