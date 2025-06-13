@@ -1,0 +1,699 @@
+@import "tailwindcss";
+
+/*
+Fonts
+*/
+
+.heebo-menuQuotes {
+  font-family: "Heebo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sixtyfour-convergence-title {
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0,
+      "XELA" 100,
+      "YELA" 0;
+}
+
+.bona-nova-sc-regular {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.bona-nova-sc-bold {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.bona-nova-sc-regular-italic {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/*
+Page
+*/
+
+body {
+    background: rgb(0,0,0);
+    background: linear-gradient(58deg, rgba(0,0,0,1) 0%, rgba(27,27,27,1) 8%, rgba(0,0,0,1) 16%,
+    rgba(27,27,27,1) 25%, rgba(0,0,0,1) 35%, rgba(27,27,27,1) 45%, rgba(0,0,0,1) 56%,
+    rgba(27,27,27,1) 68%, rgba(0,0,0,1) 78%, rgba(27,27,27,1) 89%, rgba(0,0,0,1) 98%);
+    margin: 0;
+    padding: 0;
+}
+
+.enleve {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.enleve::-webkit-scrollbar {
+    display: none;
+}
+
+#siteLayout {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+#sideWebSup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*
+Disposition
+*/
+
+#headerSup {
+    background: rgb(0,0,0);
+    border: 4mm ridge rgba(174, 174, 174, 0.6);
+    position: relative;
+    width: 1300px;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+#separateSup {
+    background: rgb(0,0,0);
+    border: 4mm ridge rgba(174, 174, 174, 0.6);
+    position: relative;
+    width: 10px;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+#sideContentSup {
+    background: rgb(0,0,0);
+    border: 4mm ridge rgba(174, 174, 174, 0.6);
+    position: relative;
+    width: 200px;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+#contentSup {
+    background: rgb(0,0,0);
+    border: 4mm ridge rgba(174, 174, 174, 0.6);
+    position: relative;
+    width: 1300px;
+    right: 0;
+    left: 0;
+    margin-top: 10px;
+}
+
+#footerSup {
+    background: rgb(0,0,0);
+    border: 4mm ridge rgba(174, 174, 174, 0.6);
+    position: relative;
+    width: 1300px;
+    right: 0;
+    left: 0;
+    margin-top: 10px;
+}
+
+.linear-text-gradient {
+    font-size: 15px;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 10%, rgb(0, 0, 0, 1) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.linear-textT-gradient {
+    font-size: 15px;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 10%, rgb(57, 57, 57, 1) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hover-menu li a:hover {
+    background: linear-gradient(0deg, rgb(100, 100, 100) 10%, rgb(0, 0, 0) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/*
+Header
+*/
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+
+.quoteTitle {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+/*
+Menu(s)
+*/
+
+.menuHeader {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 30px;
+}
+
+.menuHeaderSup {
+    margin-bottom: 10px;
+}
+
+.menuHeader a {
+    font-size: 20px;
+}
+
+.liensMenu {
+  background: linear-gradient(0deg, rgba(255,255,255,1) 10%, rgb(0, 0, 0, 1) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+
+/*
+Aside
+*/
+
+.titleBis {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    font-size: 25px;
+}
+
+.titleBis2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+.menuAside {
+    display: flex;
+    flex-direction: column;
+}
+
+.menuAside a {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.sousLiensMenu {
+    margin-top: 5px;
+}
+
+.sousLiensMenu a {
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.secretImage {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+/*
+Content(s)
+*/
+
+.titleI {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    margin-bottom: 0px;
+}
+
+.textI {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/*
+Footer
+*/
+
+.alligner {
+    display: flex;
+    justify-content: space-around;
+}
+
+.colonne {
+    display: flex;
+    flex-direction: column;
+}
+
+.colonne a {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.menuFooter {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuFooter a {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  display: block;
+}
+
+.menuTop {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+
+.quoteFooter {
+    color: gray;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/*
+Barres de sectionnement - CORRIGÉ
+*/
+
+.barSectioning {
+  border-bottom: 4mm ridge rgba(174, 174, 174, 0.6);
+  padding-top: 7px;
+  width: auto;
+}
+
+.barSectioning2 {
+  border-bottom: 2mm ridge rgba(174, 174, 174, 0.6);
+  width: auto;
+}
+
+.barSectioning2-5 {
+  width: auto;
+}
+
+.barSectioning3 {
+  border-bottom: 4mm ridge rgba(174, 174, 174, 0.6);
+  padding-top: 7px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 75%;
+}
+
+.barSectioning4 {
+  border-bottom: 4mm ridge rgba(174, 174, 174, 0.6);
+  padding-top: 7px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 97.75%;
+}
+
+/*
+Icon Table - Grille des survivors/cryptids
+*/
+
+.iconTable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.iconiqueIcons {
+  border: 4mm ridge rgba(174, 174, 174, 0.6);
+  position: relative;
+  width: 175px;
+  height: 175px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.collone {
+  display: flex;
+  flex-direction: column;
+}
+
+.collone a {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+/*
+Character Colors & Fonts - colorsStyle2.css
+*/
+
+.titleP {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.quoteP {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+/* LIZT_SY */
+.jacquarda-bastarda-9-regular {
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.virusColor {
+  background: linear-gradient(0deg, rgb(37, 183, 0) 10%, rgb(8, 41, 0) 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 10px rgb(14, 70, 0)
+}
+
+/* UDC */
+.rubik-burned-regular {
+  font-family: "Rubik Burned", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.insaneColor {
+  background: linear-gradient(0deg, rgb(183, 0, 0) 10%, rgb(41, 0, 0) 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 10px rgb(70, 0, 0)
+}
+
+/* GD15 */
+.rubik-glitch-regular {
+  font-family: "Rubik Glitch", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.damnedColor {
+  background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgb(50, 50, 50) 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 10px rgb(34, 34, 34)
+}
+
+/* Furnace */
+.rubik-pixels-regular {
+  font-family: "Rubik Pixels", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.chefColor {
+  background: linear-gradient(0deg, rgb(183, 61, 0) 10%, rgb(61, 25, 0) 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 10px rgb(70, 25, 0)
+}
+
+/* M */
+.irish-grover-regular {
+  font-family: "Irish Grover", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.glitchColor {
+  background: linear-gradient(0deg, rgb(128, 128, 128) 10%, rgb(53, 53, 53) 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 10px rgb(53, 53, 53)
+}
+
+/* Slendrina */
+.frijole-regular {
+  font-family: "Frijole", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bansheeColor {
+  background: linear-gradient(0deg, rgba(185, 185, 185) 10%, rgb(122, 122, 122, 0.8) 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 10px rgba(186, 186, 186, 0.8)
+}
+
+/*
+Name Styles - nameStyle.css
+*/
+
+.imageNameLizt {
+  width: 225px;
+  height: 175px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+Profile & Stats Styles
+*/
+
+.profileAside {
+  border: 4mm ridge rgba(174, 174, 174, 0.6);
+  width: 320px;
+  
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+
+  padding: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.imageProfile {
+  width: 100%; /* S'adapte à la largeur du container */
+  max-width: 250px;
+  height: auto; /* Garde les proportions */
+}
+
+.quoteProfile {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.quoteProfileColor {
+  color: gray;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.titleList {
+  display: flex;
+  justify-content: center;
+  font-size: 18px; /* Légèrement plus petit */
+  margin-bottom: 10px;
+}
+
+.statsInline {
+  display: flex;
+}
+
+.statsInline2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: -8px;
+}
+
+.limitedSpace {
+  flex: 1; /* Prend l'espace disponible */
+  min-width: 80px;
+}
+
+.limitedSpace2 {
+  flex: 0 0 auto; /* Ne grandit pas, garde sa taille */
+  text-align: right;
+  min-width: 60px;
+}
+
+.statsInline div p {
+  margin: 3px 0;
+  font-size: 12px;
+}
+
+/* Section Titles */
+.titleD {
+  display: inline;
+  margin-left: 10px;
+  font-size: 35px;
+}
+
+.titleD#sousMenu2 {
+  display: inline;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+/* Ajout d'un wrapper pour le contenu principal */
+.contentWithProfile {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.mainContent {
+  flex: 1;
+  min-width: 0;
+}
+
+/*
+Table of Contents & Navigation
+*/
+
+.menuAside2 {
+  border: 4mm ridge rgba(174, 174, 174, 0.6);
+  margin-left: 15px;
+  margin-right: 20px;
+  margin-top: 20px;
+  display: inline-block;
+  padding: 15px;
+  width: 280px;
+  box-sizing: border-box;
+}
+
+/*
+Moveset Table
+*/
+
+.movesetAside {
+  border: 4mm ridge rgba(174, 174, 174, 0.6);
+  margin-left: 20px;
+  display: inline-block;
+  justify-content: center;
+}
+
+.movesetBorders {
+  border-right: 2mm ridge rgba(174, 174, 174, 0.6);
+  height: auto;
+}
+
+.movesetBorders2 {
+  height: auto;
+}
+
+.movesetBorders,
+.movesetBorders2 {
+  vertical-align: top;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.movesetBorders p,
+.movesetBorders2 p {
+  margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.movesetSpace {
+  width: 90px;
+  text-align: center;
+}
+
+.movesetSpace p {
+  font-weight: bold;
+}
+
+.movesetSpace2 {
+  width: 125px;
+}
+
+.movesetSpace2 p {
+  font-size: 13px;
+  line-height: 1.2;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.movesetSpace3 {
+  width: 180px;
+}
+
+.movesetSpace4 {
+  width: 650px;
+}
+
+.movesetSpace5 {
+  width: 150px;
+}
+
+.tinyStuff {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1600px) {
+  .movesetAside {
+    font-size: 12px;
+  }
+  
+  .movesetSpace4 {
+    width: 500px;
+  }
+  
+  .movesetSpace5 {
+    width: 120px;
+  }
+}
