@@ -224,7 +224,7 @@ const MovesetTable = () => (
       </div>
       <div className="movesetBorders movesetSpace4 tinyStuff">
         <p className="textI linear-textT-gradient">
-          When pressing Q, <strong>LIZT_TER</strong> tries grabbing in front of it. If successful, it will hold the Survivor&apos;s head up before spinning the blade inside the Survivors Troso for 3 Seconds. Dealing up to 30 DMG and inflicting <strong>Bleed I</strong> for 5 Seconds. If missed, it grants LIZT_TER <strong>Slowness I</strong> for 3 Seconds instead.
+          When pressing Q, <strong>LIZT_TER</strong> tries grabbing in front of it. If successful, it will hold the Survivor&apos;s head up before spinning the blade inside the Survivor's torso for 3 Seconds. Dealing up to 30 DMG and inflicting <strong>Bleed I</strong> for 5 Seconds. If missed, it grants LIZT_TER <strong>Slowness I</strong> for 3 Seconds instead.
           <br /><br />
           If Q is held, <strong>LIZT_TER</strong> will instead stab itself, spinning the Blade and dealing 100 DMG to self, gaining <strong>Speed II</strong> for 5 Seconds.
         </p>

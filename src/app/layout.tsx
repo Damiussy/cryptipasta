@@ -21,7 +21,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Frijole&family=Irish+Grover&family=Jacquarda+Bastarda+9&family=Rubik+Burned&family=Rubik+Glitch&family=Rubik+Pixels&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <div id="siteLayout">
+        <div id="siteLayout" className="fade-in-blink">
           {children}
         </div>
       </body>

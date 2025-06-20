@@ -62,15 +62,18 @@ body {
 }
 
 #siteLayout {
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-right: 20px;
+  height: 100%;
 }
 
 #sideWebSup {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 /*
@@ -78,54 +81,54 @@ Disposition
 */
 
 #headerSup {
-    background: rgb(0,0,0);
-    border: 4mm ridge rgba(174, 174, 174, 0.6);
-    position: relative;
-    width: 1300px;
-    top: 0;
-    right: 0;
-    left: 0;
+  background: rgb(0,0,0);
+  border: 4mm ridge rgba(174, 174, 174, 0.6);
+  position: relative;
+  width: 1300px;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 #separateSup {
-    background: rgb(0,0,0);
-    border: 4mm ridge rgba(174, 174, 174, 0.6);
-    position: relative;
-    width: 10px;
-    top: 0;
-    right: 0;
-    left: 0;
+  background: rgba(0, 0, 0, 0);
+  border: 4mm ridge rgba(174, 174, 174, 0);
+  position: relative;
+  width: 10px;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 #sideContentSup {
-    background: rgb(0,0,0);
-    border: 4mm ridge rgba(174, 174, 174, 0.6);
-    position: relative;
-    width: 200px;
-    top: 0;
-    right: 0;
-    left: 0;
+  background: rgb(0,0,0);
+  border: 4mm ridge rgba(174, 174, 174, 0.6);
+  position: relative;
+  width: 200px;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 #contentSup {
-    background: rgb(0,0,0);
-    border: 4mm ridge rgba(174, 174, 174, 0.6);
-    position: relative;
-    width: 1300px;
-    right: 0;
-    left: 0;
-    margin-top: 10px;
+  background: rgb(0,0,0);
+  border: 4mm ridge rgba(174, 174, 174, 0.6);
+  position: relative;
+  width: 1300px;
+  right: 0;
+  left: 0;
+  margin-top: 10px;
 }
 
 #footerSup {
-    background: rgb(0,0,0);
-    border: 4mm ridge rgba(174, 174, 174, 0.6);
-    position: relative;
-    width: 1300px;
-    right: 0;
-    left: 0;
-    margin-top: 10px;
-    padding-top: 10px;
+  background: rgb(0,0,0);
+  border: 4mm ridge rgba(174, 174, 174, 0.6);
+  position: relative;
+  width: 1300px;
+  right: 0;
+  left: 0;
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
 .linear-text-gradient {
@@ -697,4 +700,121 @@ Moveset Table
   .movesetSpace5 {
     width: 120px;
   }
+}
+
+/* Animation de flottement pour la sidebar */
+@keyframes sidebarFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+#sideWebSup.floating {
+  animation: sidebarFloat 3s ease-in-out infinite;
+}
+
+/* ANIMATIONS SIMPLES ET EFFICACES */
+
+/* Animation pour divs avec blur */
+@keyframes divBlurIn {
+  0% { 
+    opacity: 0;
+    filter: blur(8px) brightness(0.4);
+    transform: scale(0.98);
+  }
+  100% { 
+    opacity: 1; 
+    filter: blur(0px) brightness(1);
+    transform: scale(1);
+  }
+}
+
+/* Animation pour mots (page d'accueil) */
+@keyframes wordBlurIn {
+  0% { 
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateY(-3px) scale(0.95);
+  }
+  100% { 
+    opacity: 1; 
+    filter: blur(0px);
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* Animation pour lettres individuelles (textes courts) */
+@keyframes letterBlurIn {
+  0% { 
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(-2px);
+  }
+  100% { 
+    opacity: 1; 
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
+}
+
+/* Animation rapide pour lettres des autres pages */
+@keyframes letterBlurFast {
+  0% { 
+    opacity: 0;
+    filter: blur(1px);
+    transform: translateY(-1px);
+  }
+  100% { 
+    opacity: 1; 
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
+}
+
+/* Simple fade for heavy pages */
+@keyframes simpleFadeIn {
+  0% { 
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0px);
+  }
+}
+
+/* Classes appliquées */
+.div-blur-in {
+  animation: divBlurIn 0.6s ease-out;
+}
+
+.letter-blur-in {
+  animation: letterBlurIn 0.3s ease-out;
+  display: inline-block;
+}
+
+.letter-blur-fast {
+  animation: letterBlurFast 0.15s ease-out;
+  display: inline-block;
+}
+
+.word-blur-in {
+  animation: wordBlurIn 0.4s ease-out;
+  display: inline-block;
+}
+
+.simple-fade-in {
+  animation: simpleFadeIn 0.5s ease-out; /* Simple fade for heavy content */
+}
+
+.pending-animation {
+  /* Elements waiting to be animated when they come into view */
+  opacity: 1; /* Keep them visible but not animated */
+}
+
+.page-fade-in {
+  animation: divBlurIn 0.8s ease-out;
 }
