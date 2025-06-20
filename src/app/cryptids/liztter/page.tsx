@@ -217,14 +217,14 @@ const MovesetTable = () => (
         <p className="textI linear-textT-gradient">Q</p>
       </div>
       <div className="movesetBorders movesetSpace2 tinyStuff">
-        <p className="textI linear-textT-gradient">os.system(&apos;EXECUTION&apos;)</p>
+        <p className="textI linear-textT-gradient">os.system('EXECUTION')</p>
       </div>
       <div className="movesetBorders movesetSpace3 tinyStuff">
         <p className="textI linear-textT-gradient"> </p>
       </div>
       <div className="movesetBorders movesetSpace4 tinyStuff">
         <p className="textI linear-textT-gradient">
-          When pressing Q, <strong>LIZT_TER</strong> tries grabbing in front of it. If successful, it will hold the Survivor&apos;s head up before spinning the blade inside the Survivors Troso for 3 Seconds. Dealing up to 30 DMG and inflicting <strong>Bleed I</strong> for 5 Seconds. If missed, it grants LIZT_TER <strong>Slowness I</strong> for 3 Seconds instead.
+          When pressing Q, <strong>LIZT_TER</strong> tries grabbing in front of it. If successful, it will hold the Survivor's head up before spinning the blade inside the Survivor's torso for 3 Seconds. Dealing up to 30 DMG and inflicting <strong>Bleed I</strong> for 5 Seconds. If missed, it grants LIZT_TER <strong>Slowness I</strong> for 3 Seconds instead.
           <br /><br />
           If Q is held, <strong>LIZT_TER</strong> will instead stab itself, spinning the Blade and dealing 100 DMG to self, gaining <strong>Speed II</strong> for 5 Seconds.
         </p>
@@ -243,7 +243,7 @@ const MovesetTable = () => (
         <p className="textI linear-textT-gradient">E</p>
       </div>
       <div className="movesetBorders movesetSpace2 tinyStuff">
-        <p className="textI linear-textT-gradient">printf(&quot;HELLO WORLD&quot;)</p>
+        <p className="textI linear-textT-gradient">printf("HELLO WORLD")</p>
       </div>
       <div className="movesetBorders movesetSpace3 tinyStuff">
         <p className="textI linear-textT-gradient"> </p>
@@ -309,8 +309,8 @@ export default function LiztterPage() {
               <p className="textI linear-textT-gradient">
                 <span className="virusColor disable-links">LIZT_TER</span> is the first cryptid ever recorded inside of the database. It is
                 a prototype robot gone wrong created by Dr. ▇▇▇▇▇ in ▇▇▇▇. It has been suspected and linked to the ▇▇▇▇▇▇▇▇▇▇▇ of several
-                scientists, most notably people who were friends with Dr. ▇▇▇▇▇▇. In the supercomputer, it is &apos;FREE&apos; to use with no currency involved, it&apos;s
-                one of the ▇▇▇ &apos;FREE&apos; cryptids inside the database alongside <span className="insaneColor disable-links">UDC</span>.
+                scientists, most notably people who were friends with Dr. ▇▇▇▇▇▇. In the supercomputer, it is 'FREE' to use with no currency involved, it's
+                one of the ▇▇▇ 'FREE' cryptids inside the database alongside <span className="insaneColor disable-links">UDC</span>.
               </p>
 
               <TableOfContents />
@@ -324,7 +324,7 @@ export default function LiztterPage() {
             <h2 className="linear-text-gradient titleD">Appearance</h2>
             <div className="barSectioning4"></div>
             <p className="textI linear-textT-gradient">
-              <strong>LIZT_TER</strong> is a towering, Cybernetic Cryptid standing at an imposing 7&apos;4&quot;. Their body is encased in a segmented, black exoskeleton-like
+              <strong>LIZT_TER</strong> is a towering, Cybernetic Cryptid standing at an imposing 7'4". Their body is encased in a segmented, black exoskeleton-like
               armor, reinforced with jagged, angular plating. Glowing green spikes protrude from key points along their frame—most notably the shoulders, arms, and
               legs—pulsing with an luminescence that suggests an energy source integrated into them. The armor appears both flexible and durable.
               <br /><br />
@@ -334,7 +334,7 @@ export default function LiztterPage() {
               their body. Jagged, wiry antennae extend from the top of the monitor, uneven and erratic in their placement, as if damaged or repurposed.
               <br /><br />
 
-              One of <strong>LIZT_TER</strong>&apos;s defining features is the massive blade integrated into their arm, designed for efficient ▇▇▇▇▇. The blade is capable of
+              One of <strong>LIZT_TER</strong>'s defining features is the massive blade integrated into their arm, designed for efficient ▇▇▇▇▇. The blade is capable of
               spinning to ▇▇▇▇ off any excess ▇▇▇▇▇ or to further ▇▇▇▇▇, ensuring it remains sharp and unblemished. Their lower limbs, long and reinforced,
               end in clawed, mechanical feet.
             </p>
@@ -360,7 +360,7 @@ export default function LiztterPage() {
             <h2 className="linear-text-gradient titleD">Audio</h2>
             <div className="barSectioning4"></div>
             <p className="textI linear-textT-gradient">
-              This section is still under construction, as we haven&apos;t started working on the game.
+              This section is still under construction, as we haven't started working on the game.
             </p>
             <br />
           </div>
@@ -370,7 +370,7 @@ export default function LiztterPage() {
             <h2 className="linear-text-gradient titleD">Strategy</h2>
             <div className="barSectioning4"></div>
             <p className="textI linear-textT-gradient">
-              This section is still under construction, as we haven&apos;t started working on the game.
+              This section is still under construction, as we haven't started working on the game.
             </p>
             <br />
           </div>
@@ -393,12 +393,12 @@ export default function LiztterPage() {
             <div className="barSectioning4"></div>
             <p className="textI linear-textT-gradient">
               ♢ <strong>LIZT_TER</strong> is Non-Binary. <br />
-              ♢ It is unclear what <strong>LIZT_TER</strong> would use for pronounces, but it doesn&apos;t seem to care. <br />
+              ♢ It is unclear what <strong>LIZT_TER</strong> would use for pronounces, but it doesn't seem to care. <br />
               ♢ <strong>LIZT_TER</strong> feels indifferent to any other AI unlike how they share a hard ▇▇▇▇▇ for Robloxians. <br />
               ♢ <strong>LIZT_TER</strong> has a tendency to ▇▇▇▇ at any exposed wires it has. Never fully removing it. <br />
-              ♢ If <strong>LIZT_TER</strong> was ever to be used for console games, it&apos;d crash. Their system was built upon Windows ▇▇. <br />
-              ♢ If <strong>LIZT_TER</strong> were to get in contact with water, it&apos;d shut down. <br />
-              ♢ <strong>LIZT_TER</strong> doesn&apos;t run by battery nor blood. It replenishes energy constantly no matter what. <br />
+              ♢ If <strong>LIZT_TER</strong> was ever to be used for console games, it'd crash. Their system was built upon Windows ▇▇. <br />
+              ♢ If <strong>LIZT_TER</strong> were to get in contact with water, it'd shut down. <br />
+              ♢ <strong>LIZT_TER</strong> doesn't run by battery nor blood. It replenishes energy constantly no matter what. <br />
               ♢ <strong>LIZT_TER</strong> is currently one of the tallest Cryptids. <br />
             </p>
             <br />
@@ -409,7 +409,7 @@ export default function LiztterPage() {
             <h2 className="linear-text-gradient titleD">Gallery</h2>
             <div className="barSectioning4"></div>
             <p className="textI linear-textT-gradient">
-              This section is still under construction, as we haven&apos;t started working on the game.
+              This section is still under construction, as we haven't started working on the game.
             </p>
             <br />
           </div>

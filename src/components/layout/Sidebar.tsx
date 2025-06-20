@@ -52,53 +52,53 @@ const menuItems = [
 ];
 
 export default function Sidebar() {
-    return (
-      <div className="linear-text-gradient">
-        <div className="linear-text-gradient sixtyfour-convergence-title">
-          <h1 className="titleBis">
-            קריפטיפסטה
-          </h1>
-      </div>
-
-      <div className="barSectioning"></div>
-
-      <div className="linear-text-gradient bona-nova-sc-bold">
-        <h2 className="titleBis2">
-          <u>Gameplay</u>
-        </h2>
-      </div>
-
-      <div className="linear-textT-gradient bona-nova-sc-regular">
-        <nav>
-          <ul className="menuAside bona-nova-sc-regular">
-            {menuItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="liensMenu"
-                >
-                  ➤ {item.label}
-                </Link>
-                
-                {item.subItems && (
-                  <ul className="sousLiensMenu hover-menu">
-                    {item.subItems.map((subItem) => (
-                      <li key={subItem.href}>
-                        <Link
-                          href={subItem.href}
-                          className="liensMenu"
-                        >
-                          ➥ {subItem.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+  return (
+    <div className="linear-text-gradient">
+      <div className="linear-text-gradient sixtyfour-convergence-title">
+        <h1 className="titleBis simple-text-blink">
+          קריפטיפסטה
+        </h1>
     </div>
-  );
+
+    <div className="barSectioning"></div>
+
+    <div className="linear-text-gradient bona-nova-sc-bold">
+      <h2 className="titleBis2 simple-text-blink">
+        <u>Gameplay</u>
+      </h2>
+    </div>
+
+    <div className="linear-textT-gradient bona-nova-sc-regular">
+      <nav>
+        <ul className="menuAside bona-nova-sc-regular">
+          {menuItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="liensMenu simple-gray-blink"
+              >
+                ➤ {item.label}
+              </Link>
+              
+              {item.subItems && (
+                <ul className="sousLiensMenu hover-menu">
+                  {item.subItems.map((subItem) => (
+                    <li key={subItem.href}>
+                      <Link
+                        href={subItem.href}
+                        className="liensMenu simple-gray-blink"
+                      >
+                        ➥ {subItem.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+);
 }
