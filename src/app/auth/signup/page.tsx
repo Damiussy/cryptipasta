@@ -54,7 +54,7 @@ export default function SignUpPage() {
         }, 3000);
       }
     } catch {
-      setError('Une erreur est survenue lors de l\'inscription');
+      setError('An error occurred while signing up');
     } finally {
       setLoading(false);
     }

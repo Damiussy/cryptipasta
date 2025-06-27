@@ -19,7 +19,7 @@ function SignInForm() {
     e.preventDefault();
     
     if (!email || !password) {
-      setError('Veuillez remplir tous les champs');
+      setError('Please fill in all fields');
       return;
     }
 
@@ -34,14 +34,14 @@ function SignInForm() {
       });
 
       if (result?.error) {
-        setError('Email ou mot de passe incorrect');
+        setError('Email or password incorrect');
       } else {
         // Connexion réussie
         router.push(callbackUrl);
         router.refresh();
       }
     } catch {
-      setError('Une erreur est survenue lors de la connexion');
+      setError('An error occurred while signing in');
     } finally {
       setLoading(false);
     }
@@ -57,7 +57,7 @@ function SignInForm() {
           </h1>
           <div className="barSectioning"></div>
           <h2 className="linear-text-gradient bona-nova-sc-bold auth-subtitle">
-            <u>Se connecter</u>
+            <u>Sign In</u>
           </h2>
         </div>
 
@@ -73,14 +73,14 @@ function SignInForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="auth-input"
-              placeholder="votre@email.com"
+              placeholder="your@email.com"
               required
             />
           </div>
 
           <div className="form-group">
             <label htmlFor="password" className="linear-textT-gradient bona-nova-sc-regular">
-              Mot de passe *
+              Password *
             </label>
             <input
               id="password"
@@ -96,7 +96,7 @@ function SignInForm() {
           {/* Error Message */}
           {error && (
             <div className="auth-message error">
-              <span className="linear-text-gradient">❌ {error}</span>
+              <span className="linear-text-gradient">{error}</span>
             </div>
           )}
 
@@ -107,7 +107,7 @@ function SignInForm() {
             className="auth-button"
           >
             <span className="linear-text-gradient bona-nova-sc-bold">
-              {loading ? 'Connexion en cours...' : 'Se connecter'}
+              {loading ? 'Loading...' : 'Sign In'}
             </span>
           </button>
 
@@ -115,7 +115,7 @@ function SignInForm() {
           <div className="auth-links">
             <p className="linear-textT-gradient bona-nova-sc-regular">
               <Link href="/auth/forgot-password" className="liensMenu">
-                Mot de passe oublié ?
+                Forgotten your Password ?
               </Link>
             </p>
           </div>
@@ -125,14 +125,14 @@ function SignInForm() {
           {/* Sign Up Link */}
           <div className="auth-links">
             <p className="linear-textT-gradient bona-nova-sc-regular">
-              Pas encore de compte ?{' '}
+              No account yet?{' '}
               <Link href="/auth/signup" className="liensMenu">
-                Créer un compte
+                Create an account
               </Link>
             </p>
             <p className="linear-textT-gradient bona-nova-sc-regular">
               <Link href="/" className="liensMenu">
-                ← Retour à l'accueil
+                ← Back to the home page
               </Link>
             </p>
           </div>
