@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SessionProvider from '@/components/providers/SessionProvider';
 
 export const metadata: Metadata = {
   title: "Cryptipasta - Home",
@@ -27,7 +28,9 @@ export default function RootLayout({
       </head>
       <body>
         <div id="siteLayout" className="fade-in-blink">
-          {children}
+          <SessionProvider>
+            {children}
+          </SessionProvider>
         </div>
       </body>
     </html>

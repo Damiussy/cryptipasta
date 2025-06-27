@@ -18,9 +18,6 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </div>
 
-      {/* Separator */}
-      <div id="separateSup"></div>
-
       {/* Main Content avec PageTransition */}
       <PageTransition>
         <div id="mainWebSup">

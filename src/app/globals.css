@@ -66,6 +66,7 @@ body {
   justify-content: space-around;
   margin-top: 20px;
   margin-right: 20px;
+  margin-left: 220px;
   height: 100%;
 }
 
@@ -74,6 +75,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 20px;
+  
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  z-index: 1000;
 }
 
 /*
@@ -90,16 +96,6 @@ Disposition
   left: 0;
 }
 
-#separateSup {
-  background: rgba(0, 0, 0, 0);
-  border: 4mm ridge rgba(174, 174, 174, 0);
-  position: relative;
-  width: 10px;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
 #sideContentSup {
   background: rgb(0,0,0);
   border: 4mm ridge rgba(174, 174, 174, 0.6);
@@ -108,6 +104,8 @@ Disposition
   top: 0;
   right: 0;
   left: 0;
+  flex: 1;
+  overflow-y: auto;
 }
 
 #contentSup {
@@ -197,6 +195,75 @@ Menu(s)
   text-decoration: none;
 }
 
+/* Sidebar Interactive */
+
+.menu-item-with-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15px;
+}
+
+.menu-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 8px;
+  transition: all 0.3s ease;
+}
+
+.menu-arrow:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 14px;
+
+  background: linear-gradient(0deg, rgba(255,255,255,1) 10%, rgb(57, 57, 57, 1) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.menu-arrow:hover .arrow {
+  background: linear-gradient(0deg, rgb(100, 100, 100) 10%, rgb(0, 0, 0) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sousLiensMenu {
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 1;
+  max-height: 300px;
+}
+
+.sousLiensMenu.closed {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sousLiensMenu.open {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 5px;
+}
+
+.menuAside > li > .liensMenu {
+  margin-left: 20px;
+}
+
 /*
 Aside
 */
@@ -222,7 +289,7 @@ Aside
 }
 
 .menuAside a {
-    margin-left: 15px;
+    margin-left: 5px;
     font-size: 20px;
 }
 
@@ -231,7 +298,7 @@ Aside
 }
 
 .sousLiensMenu a {
-    margin-left: 25px;
+    margin-left: 40px;
     font-size: 15px;
 }
 
@@ -239,6 +306,177 @@ Aside
     width: 30px;
     height: 30px;
     margin-top: 10px;
+}
+
+/*
+Authentication Pages
+*/
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #000;
+}
+
+.auth-content {
+  background: rgb(0,0,0);
+  border: 4mm ridge rgba(174, 174, 174, 0.6);
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-title {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.auth-subtitle {
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.auth-input {
+  background: rgba(20, 20, 20, 0.8);
+  border: 2px solid rgba(174, 174, 174, 0.3);
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: white;
+  font-family: 'Bona Nova SC', serif;
+  transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: rgba(174, 174, 174, 0.6);
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.auth-button {
+  background: rgba(30, 30, 30, 0.8);
+  border: 2px solid rgba(174, 174, 174, 0.6);
+  border-radius: 4px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.auth-button:hover:not(:disabled) {
+  background: rgba(40, 40, 40, 0.9);
+  border-color: rgba(174, 174, 174, 0.8);
+  transform: translateY(-1px);
+}
+
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-button span {
+  font-size: 16px;
+}
+
+.auth-message {
+  padding: 12px;
+  border-radius: 4px;
+  text-align: center;
+  border: 2px solid;
+}
+
+.auth-message.error {
+  border-color: rgba(255, 100, 100, 0.6);
+  background: rgba(255, 50, 50, 0.1);
+}
+
+.auth-message.success {
+  border-color: rgba(100, 255, 100, 0.6);
+  background: rgba(50, 255, 50, 0.1);
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-links p {
+  margin: 0;
+}
+
+.auth-links .liensMenu {
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.auth-links .liensMenu:hover {
+  background: linear-gradient(0deg, rgb(150, 150, 150) 10%, rgb(50, 50, 50) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Sidebar Auth Section */
+
+.user-info {
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  cursor: default !important;
+  text-decoration: none !important;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 20px;
+  margin-left: 15px;
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+}
+
+.logout-button:hover {
+  background: linear-gradient(0deg, rgb(100, 100, 100) 10%, rgb(0, 0, 0) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /*
@@ -313,7 +551,7 @@ Footer
 }
 
 /*
-Barres de sectionnement - CORRIGÉ
+Sectioning Bars
 */
 
 .barSectioning {
@@ -348,7 +586,7 @@ Barres de sectionnement - CORRIGÉ
 }
 
 /*
-Icon Table - Grille des survivors/cryptids
+Icon Table
 */
 
 .iconTable {
@@ -381,7 +619,7 @@ Icon Table - Grille des survivors/cryptids
 }
 
 /*
-Character Colors & Fonts - colorsStyle2.css
+Character Colors & Fonts
 */
 
 .titleP {
@@ -520,9 +758,9 @@ Profile & Stats Styles
 }
 
 .imageProfile {
-  width: 100%; /* S'adapte à la largeur du container */
+  width: 100%;
   max-width: 250px;
-  height: auto; /* Garde les proportions */
+  height: auto;
 }
 
 .quoteProfile {
@@ -541,7 +779,7 @@ Profile & Stats Styles
 .titleList {
   display: flex;
   justify-content: center;
-  font-size: 18px; /* Légèrement plus petit */
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
@@ -559,12 +797,12 @@ Profile & Stats Styles
 }
 
 .limitedSpace {
-  flex: 1; /* Prend l'espace disponible */
+  flex: 1;
   min-width: 80px;
 }
 
 .limitedSpace2 {
-  flex: 0 0 auto; /* Ne grandit pas, garde sa taille */
+  flex: 0 0 auto;
   text-align: right;
   min-width: 60px;
 }
@@ -587,7 +825,7 @@ Profile & Stats Styles
   font-size: 20px;
 }
 
-/* Ajout d'un wrapper pour le contenu principal */
+/* Content with Profile */
 .contentWithProfile {
   display: flex;
   gap: 20px;
@@ -702,7 +940,7 @@ Moveset Table
   }
 }
 
-/* Animation de flottement pour la sidebar */
+/* Sidebar Floating Animation */
 @keyframes sidebarFloat {
   0%, 100% {
     transform: translateY(0px);
@@ -716,9 +954,9 @@ Moveset Table
   animation: sidebarFloat 3s ease-in-out infinite;
 }
 
-/* ANIMATIONS SIMPLES ET EFFICACES */
+/* Simple and Effective Animations */
 
-/* Animation pour divs avec blur */
+/* Blur Animation for divs */
 @keyframes divBlurIn {
   0% { 
     opacity: 0;
@@ -732,7 +970,7 @@ Moveset Table
   }
 }
 
-/* Animation pour mots (page d'accueil) */
+/* Word Animation (Homepage) */
 @keyframes wordBlurIn {
   0% { 
     opacity: 0;
@@ -746,7 +984,7 @@ Moveset Table
   }
 }
 
-/* Animation pour lettres individuelles (textes courts) */
+/* Individual Letter Animation (short texts) */
 @keyframes letterBlurIn {
   0% { 
     opacity: 0;
@@ -760,7 +998,7 @@ Moveset Table
   }
 }
 
-/* Animation rapide pour lettres des autres pages */
+/* Fast Letter Animation (other pages) */
 @keyframes letterBlurFast {
   0% { 
     opacity: 0;
@@ -774,7 +1012,7 @@ Moveset Table
   }
 }
 
-/* Simple fade for heavy pages */
+/* Simple Fade for Heavy Pages */
 @keyframes simpleFadeIn {
   0% { 
     opacity: 0;
@@ -786,7 +1024,7 @@ Moveset Table
   }
 }
 
-/* Classes appliquées */
+/* Applied Classes */
 .div-blur-in {
   animation: divBlurIn 0.6s ease-out;
 }
@@ -807,12 +1045,11 @@ Moveset Table
 }
 
 .simple-fade-in {
-  animation: simpleFadeIn 0.5s ease-out; /* Simple fade for heavy content */
+  animation: simpleFadeIn 0.5s ease-out;
 }
 
 .pending-animation {
-  /* Elements waiting to be animated when they come into view */
-  opacity: 1; /* Keep them visible but not animated */
+  opacity: 1;
 }
 
 .page-fade-in {
