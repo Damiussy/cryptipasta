@@ -41,6 +41,8 @@ export default function SignUpPage() {
           data: {
             username: username || email.split('@')[0],
             full_name: username || email.split('@')[0],
+            display_name: username || email.split('@')[0],
+            name: username || email.split('@')[0],
           }
         }
       });

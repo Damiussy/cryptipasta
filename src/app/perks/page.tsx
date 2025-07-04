@@ -54,12 +54,12 @@ export default function Perks() {
         <div className="linear-textT-gradient bona-nova-sc-regular">
           <p className="textI">
             Perks are very miscellaneous in nature, they are only usable and present inside the delta supercomputer. They mainly
-            compose of cosmetic elements, alongside upgrades and progression for both survivors and killers... 
+            compose of cosmetic elements, alongside upgrades and progression for both outliers and killers... 
             <br /><br />
             The reasoning behind Perks are unknown, however, what we do know is that they were the least problematic files to
             decrypt as they were the first documents we had ever decrypted. 
             <br /><br />
-            Although, one thing to note is that some files were attached and directly linked to the main data of the survivors/killers,
+            Although, one thing to note is that some files were attached and directly linked to the main data of the outliers/killers,
             which proves that these ▇▇▇▇▇ can have an influence on files that are faintly connected to them. 
             <br /><br />
             We decided to separate the Perks into multiple subclasses, as there are alot to go over. Count at least

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const navigationItems = [
   { label: 'Home', href: '/' },
-  { label: 'Survivors', href: '/survivors' },
+  { label: 'Outliers', href: '/outliers' },
   { label: 'Cryptids', href: '/cryptids' },
   { label: 'Perks', href: '/perks' },
   { label: 'Maps', href: '/maps' },

@@ -184,7 +184,7 @@ const MovesetTable = () => (
         </p>
       </div>
       <div className="movesetBorders2 movesetSpace5 tinyStuff">
-        <p className="textI linear-textT-gradient">Grants buffs when survivors complete objectives.</p>
+        <p className="textI linear-textT-gradient">Grants buffs when outliers complete objectives.</p>
       </div>
     </div>
 
@@ -207,7 +207,7 @@ const MovesetTable = () => (
         </p>
       </div>
       <div className="movesetBorders2 movesetSpace5 tinyStuff">
-        <p className="textI linear-textT-gradient">Deals DMG to survivors.</p>
+        <p className="textI linear-textT-gradient">Deals DMG to outliers.</p>
       </div>
     </div>
 
@@ -224,14 +224,14 @@ const MovesetTable = () => (
       </div>
       <div className="movesetBorders movesetSpace4 tinyStuff">
         <p className="textI linear-textT-gradient">
-          When pressing Q, <strong>LIZT_TER</strong> tries grabbing in front of it. If successful, it will hold the Survivor's head up before spinning the blade inside the Survivor's torso for 3 Seconds. Dealing up to 30 DMG and inflicting <strong>Bleed I</strong> for 5 Seconds. If missed, it grants LIZT_TER <strong>Slowness I</strong> for 3 Seconds instead.
+          When pressing Q, <strong>LIZT_TER</strong> tries grabbing in front of it. If successful, it will hold the Outlier's head up before spinning the blade inside the Outlier's torso for 3 Seconds. Dealing up to 30 DMG and inflicting <strong>Bleed I</strong> for 5 Seconds. If missed, it grants LIZT_TER <strong>Slowness I</strong> for 3 Seconds instead.
           <br /><br />
           If Q is held, <strong>LIZT_TER</strong> will instead stab itself, spinning the Blade and dealing 100 DMG to self, gaining <strong>Speed II</strong> for 5 Seconds.
         </p>
       </div>
       <div className="movesetBorders2 movesetSpace5 tinyStuff">
         <p className="textI linear-textT-gradient">
-          Traps and deals DMG to survivors.<br />
+          Traps and deals DMG to outliers.<br />
           Can gain buffs at the expense of health.
         </p>
       </div>
@@ -250,14 +250,14 @@ const MovesetTable = () => (
       </div>
       <div className="movesetBorders movesetSpace4 tinyStuff">
         <p className="textI linear-textT-gradient">
-          When pressing E, <strong>LIZT_TER</strong> emits a loud pixelated noise, inflicting <strong>Deafean I</strong> and <strong>Bleed I</strong> to nearby survivors for 8 and 6 seconds respectively. <strong>LIZT_TER</strong> cannot move while casting the move.
+          When pressing E, <strong>LIZT_TER</strong> emits a loud pixelated noise, inflicting <strong>Deafean I</strong> and <strong>Bleed I</strong> to nearby outliers for 8 and 6 seconds respectively. <strong>LIZT_TER</strong> cannot move while casting the move.
           <br /><br />
-          If E was held, <strong>LIZT_TER</strong> will start glitching its voice box out. Dealing 50 DMG to self and gaining <strong>Slowness II</strong> for 3 Seconds. Highlighting all survivors in a medium distance for 7 Seconds.
+          If E was held, <strong>LIZT_TER</strong> will start glitching its voice box out. Dealing 50 DMG to self and gaining <strong>Slowness II</strong> for 3 Seconds. Highlighting all outliers in a medium distance for 7 Seconds.
         </p>
       </div>
       <div className="movesetBorders2 movesetSpace5 tinyStuff">
         <p className="textI linear-textT-gradient">
-          Disturb survivors and chips at their health.<br />
+          Disturb outliers and chips at their health.<br />
           Can highlight at the expense of health.
         </p>
       </div>
@@ -278,10 +278,10 @@ const MovesetTable = () => (
         <p className="textI linear-textT-gradient">
           This move will only work if near an Objective. Pressing R will corrupt the nearby objective, causing it to look slightly messy and glitchy.
           <br /><br />
-          If a Survivor fails a corrupted objective, it will deal 25 DMG to the survivor and emit a loud buzzer sound, highlighting and inflicting
-          the survivor with <strong>Blindness I</strong> for 5 Seconds.
+          If an Outlier fails a corrupted objective, it will deal 25 DMG to the outlier and emit a loud buzzer sound, highlighting and inflicting
+          the outlier with <strong>Blindness I</strong> for 5 Seconds.
           <br /><br />
-          If a Survivor completes a corrupted objective, it will instead highlight them and LIZT_TER for 8 Seconds. Only the highlighted players
+          If an Outlier completes a corrupted objective, it will instead highlight them and LIZT_TER for 8 Seconds. Only the highlighted players
           can see each other.
         </p>
       </div>
@@ -346,7 +346,7 @@ export default function LiztterPage() {
             <div className="barSectioning4"></div>
             <p className="textI linear-textT-gradient">
               <strong>LIZT_TER</strong> overall is a rather technical character for a starter, being a semi-hardhitting DoT trapper that focuses on
-              setplay and rushing down survivors when it is most favorable. Its kit consists mostly of tools to disturb the survivors, with traps and
+              setplay and rushing down outliers when it is most favorable. Its kit consists mostly of tools to disturb the outliers, with traps and
               blindness, alongside its signature <strong>Bleed</strong> effect for efficient DoT. However, misuse of its abilities can get its Health                    depleted rather rapidly, encouraging players to only take daring decisions if they are confident or not according to the situation.
             </p>
             <br />
@@ -381,7 +381,7 @@ export default function LiztterPage() {
             <p className="textI linear-textT-gradient">
               Same as above, however, here are a few tips; <br />
               ♢ Misuse of abilities can cause your health to get dangerously low. <br />
-              ♢ Rushing down survivors without a proper plan is often futile. <br />
+              ♢ Rushing down outliers without a proper plan is often futile. <br />
               ♢ More tips may be added later down the line. <br />
             </p>
             <br />

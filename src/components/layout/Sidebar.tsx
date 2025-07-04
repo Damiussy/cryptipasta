@@ -11,14 +11,14 @@ const menuItems = [
     href: '/',
   },
   {
-    label: 'Survivors',
-    href: '/survivors',
+    label: 'Outliers',
+    href: '/outliers',
     subItems: [
-      { label: 'Chirpy', href: '/survivors/chirpy' },
-      { label: 'Hiroshi', href: '/survivors/hiroshi' },
-      { label: 'Donny', href: '/survivors/donny' },
-      { label: 'Mark', href: '/survivors/mark' },
-      { label: 'More...', href: '/survivors' },
+      { label: 'Chirpy', href: '/outliers/chirpy' },
+      { label: 'Hiroshi', href: '/outliers/hiroshi' },
+      { label: 'Donny', href: '/outliers/donny' },
+      { label: 'Mark', href: '/outliers/mark' },
+      { label: 'More...', href: '/outliers' },
     ],
   },
   {
@@ -58,7 +58,7 @@ const menuItems = [
 
 export default function Sidebar() {
   const [openMenus, setOpenMenus] = useState<string[]>([]);
-  const { user, isLoading, isAuthenticated } = useAuth();
+  const { isLoading, isAuthenticated } = useAuth();
 
   const toggleMenu = (label: string) => {
     setOpenMenus(prev => 
@@ -163,11 +163,6 @@ export default function Sidebar() {
             ) : isAuthenticated ? (
               // Utilisateur connecté
               <>
-                <li>
-                  <span className="liensMenu user-info">
-                    {user?.name || user?.email}
-                  </span>
-                </li>
                 <li>
                   <Link
                     href="/profile"

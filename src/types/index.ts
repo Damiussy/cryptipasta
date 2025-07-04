@@ -13,7 +13,7 @@ export interface CryptidData {
     image?: string;
 }
   
-export interface SurvivorData {
+export interface OutlierData {
     id: string;
     name: string;
     description: string;

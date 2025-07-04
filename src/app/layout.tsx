@@ -4,7 +4,7 @@ import SessionProvider from '@/components/providers/SessionProvider';
 
 export const metadata: Metadata = {
   title: "Cryptipasta - Home",
-  description: "Database of cryptic creatures and survivors from the ████ Project archives",
+  description: "Database of cryptic creatures and outliers from the ████ Project archives",
 };
 
 export default function RootLayout({

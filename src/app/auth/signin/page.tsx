@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useEffect } from 'react';
 import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -14,6 +14,13 @@ function SignInForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/';
+
+  useEffect(() => {
+    document.body.classList.add('auth-page-body');
+    return () => {
+      document.body.classList.remove('auth-page-body');
+    };
+  }, []);
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +43,6 @@ function SignInForm() {
       if (result?.error) {
         setError('Email or password incorrect');
       } else {
-        // Connexion réussie
         router.push(callbackUrl);
         router.refresh();
       }
