@@ -2,6 +2,7 @@ import Layout from '../../../components/layout/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from "next";
+import CommentsSection from '../../../components/CommentsSection';
 
 export const metadata: Metadata = {
   title: "Cryptipasta - LIZT_TER",
@@ -413,6 +414,9 @@ export default function LiztterPage() {
             </p>
             <br />
           </div>
+
+          {/* Comments Section */}
+          <CommentsSection pageSlug="liztter" />
         </div>
       </div>
     </Layout>

@@ -11,6 +11,7 @@ declare module "next-auth" {
       email: string
       name?: string | null
       image?: string | null
+      avatar_url?: string | null
     }
   }
   
@@ -18,6 +19,7 @@ declare module "next-auth" {
     id: string
     email: string
     name?: string | null
+    avatar_url?: string | null
   }
 }
 
@@ -110,6 +112,7 @@ export const authOptions: NextAuthOptions = {
                                      session.user.email?.split('@')[0];
             
             session.user.name = freshDisplayName;
+            session.user.avatar_url = userData.user.user_metadata?.avatar_url || null;
             console.log('Session callback - updated name from Supabase:', freshDisplayName);
           }
         } catch (error) {

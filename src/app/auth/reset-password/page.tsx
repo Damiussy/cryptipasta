@@ -1,62 +1,42 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-export default function SignUpPage() {
-  const [email, setEmail] = useState('');
+export default function ResetPasswordPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [username, setUsername] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [emailChecking, setEmailChecking] = useState(false);
-  const [emailExists, setEmailExists] = useState(false);
+  const [session, setSession] = useState<{ user: { id: string } } | null>(null);
   
   const router = useRouter();
 
-  // Check if email exists
-  const checkEmail = async (email: string) => {
-    if (!email || !email.includes('@')) return;
-    
-    setEmailChecking(true);
-    try {
-      const response = await fetch('/api/check-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setEmailExists(data.exists);
+  useEffect(() => {
+    // Check if user has a valid session (from reset link)
+    const checkSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        setError('Invalid or expired reset link. Please request a new password reset.');
+      } else {
+        setSession(session);
       }
-    } catch (error) {
-      console.error('Error checking email:', error);
-    } finally {
-      setEmailChecking(false);
-    }
-  };
+    };
+    
+    checkSession();
+  }, []);
 
-  // Debounced email check
-  const debouncedCheckEmail = (email: string) => {
-    const timeoutId = setTimeout(() => checkEmail(email), 500);
-    return () => clearTimeout(timeoutId);
-  };
-
-  const handleSignUp = async (e: React.FormEvent) => {
+  const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (emailExists) {
-      setError('This email is already registered. Please use a different email or sign in.');
+    if (!session) {
+      setError('Invalid session. Please request a new password reset.');
       return;
     }
-    
+
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       return;
@@ -72,29 +52,20 @@ export default function SignUpPage() {
     setMessage('');
 
     try {
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            username: username || email.split('@')[0],
-            full_name: username || email.split('@')[0],
-            display_name: username || email.split('@')[0],
-            name: username || email.split('@')[0],
-          }
-        }
+      const { error } = await supabase.auth.updateUser({
+        password: password
       });
 
       if (error) {
         setError(error.message);
       } else {
-        setMessage('Account created successfully! Check your email to confirm your account.');
+        setMessage('Password updated successfully! Redirecting to sign in...');
         setTimeout(() => {
           router.push('/auth/signin');
-        }, 3000);
+        }, 2000);
       }
     } catch {
-      setError('An error occurred while signing up');
+      setError('An error occurred while updating your password');
     } finally {
       setLoading(false);
     }
@@ -110,58 +81,15 @@ export default function SignUpPage() {
           </h1>
           <div className="barSectioning"></div>
           <h2 className="linear-text-gradient bona-nova-sc-bold auth-subtitle">
-            <u>Create an account</u>
+            <u>Reset Password</u>
           </h2>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSignUp} className="auth-form">
-          <div className="form-group">
-            <label htmlFor="username" className="linear-textT-gradient bona-nova-sc-regular">
-              Username *
-            </label>
-            <input
-              id="username"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="auth-input"
-              placeholder="Your username..."
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email" className="linear-textT-gradient bona-nova-sc-regular">
-              Email *
-            </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                setEmailExists(false);
-                debouncedCheckEmail(e.target.value);
-              }}
-              className={`auth-input ${emailExists ? 'error' : ''}`}
-              placeholder="your@email.com"
-              required
-            />
-            {emailChecking && (
-              <div className="email-checking linear-textT-gradient">
-                Checking email availability...
-              </div>
-            )}
-            {emailExists && (
-              <div className="email-error linear-textT-gradient">
-                This email is already registered
-              </div>
-            )}
-          </div>
-
+        <form onSubmit={handleResetPassword} className="auth-form">
           <div className="form-group">
             <label htmlFor="password" className="linear-textT-gradient bona-nova-sc-regular">
-              Password *
+              New Password *
             </label>
             <input
               id="password"
@@ -177,7 +105,7 @@ export default function SignUpPage() {
 
           <div className="form-group">
             <label htmlFor="confirmPassword" className="linear-textT-gradient bona-nova-sc-regular">
-              Confirm password *
+              Confirm New Password *
             </label>
             <input
               id="confirmPassword"
@@ -207,18 +135,18 @@ export default function SignUpPage() {
           {/* Submit Button */}
           <button
             type="submit"
-            disabled={loading || emailExists || emailChecking}
+            disabled={loading || !session}
             className="auth-button"
           >
             <span className="linear-text-gradient bona-nova-sc-bold">
-              {loading ? 'Loading...' : 'Create your account'}
+              {loading ? 'Updating...' : 'Update Password'}
             </span>
           </button>
 
           {/* Links */}
           <div className="auth-links">
             <p className="linear-textT-gradient bona-nova-sc-regular">
-              Already have an account?{' '}
+              Remember your password?{' '}
               <Link href="/auth/signin" className="liensMenu">
                 Sign In
               </Link>
@@ -233,4 +161,4 @@ export default function SignUpPage() {
       </div>
     </div>
   );
-}
+} 

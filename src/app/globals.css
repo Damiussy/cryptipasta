@@ -102,7 +102,7 @@ body::before {
   
   position: fixed;
   top: 10px;
-  left: 40px;
+  left: 20px;
   z-index: 1000;
 }
 
@@ -891,6 +891,7 @@ Profil Cryptic/Outlier & Stats Styles
   display: inline;
   margin-left: 10px;
   font-size: 35px;
+  font-weight: bold;
 }
 
 .titleD#sousMenu2 {
@@ -1294,3 +1295,293 @@ Moveset Table
 .page-fade-in {
   animation: divBlurIn 0.8s ease-out;
 }
+
+/* Avatar Upload Styles */
+.avatar-upload-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.avatar-upload-container:hover {
+  transform: scale(1.05);
+}
+
+.avatar-upload-container.drag-over {
+  border: 2px dashed #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2mm ridge rgba(174, 174, 174, 0.6);
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+  filter: grayscale(100%);
+}
+
+.avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.avatar-remove-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.avatar-upload-container:hover .avatar-overlay {
+  opacity: 1;
+}
+
+/* Comments Section Styles */
+.comments-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2mm ridge rgba(174, 174, 174, 0.6);
+  border-radius: 8px;
+}
+
+.comments-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Bona Nova SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.comment-form {
+  margin-bottom: 30px;
+}
+
+.comment-input-container {
+  position: relative;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 12px;
+  border: 2mm ridge rgba(174, 174, 174, 0.6);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-family: "Bona Nova SC", serif;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 80px;
+  border-radius: 4px;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.comment-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.comment-input-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.comment-char-count {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Bona Nova SC", serif;
+}
+
+.comment-submit-btn {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment-item {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1mm ridge rgba(174, 174, 174, 0.4);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.comment-item:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(174, 174, 174, 0.6);
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.comment-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.comment-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(174, 174, 174, 0.3), rgba(100, 100, 100, 0.3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1mm ridge rgba(174, 174, 174, 0.4);
+}
+
+.comment-meta {
+  flex: 1;
+}
+
+.comment-author {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-family: "Bona Nova SC", serif;
+}
+
+.comment-date {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Bona Nova SC", serif;
+}
+
+.comment-content {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+  font-family: "Bona Nova SC", serif;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.comments-loading,
+.comments-empty {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  font-family: "Bona Nova SC", serif;
+  font-style: italic;
+}
+
+/* Comment links and delete button */
+.comment-avatar-link {
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.comment-avatar-link:hover {
+  transform: scale(1.05);
+}
+
+.comment-author-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.comment-author-link:hover .comment-author {
+  opacity: 0.8;
+}
+
+.comment-delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  margin-left: auto;
+  opacity: 0.6;
+}
+
+.comment-delete-btn:hover {
+  opacity: 1;
+  background: rgba(255, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* Email validation styles */
+.email-checking {
+  font-size: 12px;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.email-error {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #ff6b6b;
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.auth-input.error {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 5px rgba(255, 107, 107, 0.3);
+}
+

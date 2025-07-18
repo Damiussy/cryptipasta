@@ -21,24 +21,38 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     console.log('Request body:', body);
     
-    const { display_name } = body;
+    const { display_name, avatar_url } = body;
     
-    if (!display_name || typeof display_name !== 'string') {
-      console.log('Invalid display_name:', display_name);
-      return NextResponse.json({ error: 'Display name is required' }, { status: 400 });
+    // Préparer les métadonnées à mettre à jour
+    const updateData: Record<string, string> = {};
+    
+    if (display_name !== undefined) {
+      if (!display_name || typeof display_name !== 'string') {
+        console.log('Invalid display_name:', display_name);
+        return NextResponse.json({ error: 'Display name is required' }, { status: 400 });
+      }
+      updateData.display_name = display_name.trim();
+      updateData.name = display_name.trim();
+    }
+    
+    if (avatar_url !== undefined) {
+      updateData.avatar_url = avatar_url;
     }
 
-    console.log('Display name to update:', display_name);
+    // Vérifier qu'on a au moins une donnée à mettre à jour
+    if (Object.keys(updateData).length === 0) {
+      console.log('No data to update');
+      return NextResponse.json({ error: 'No data provided for update' }, { status: 400 });
+    }
+
+    console.log('Data to update:', updateData);
 
     const adminClient = createServerComponentClient();
 
     const { data, error } = await adminClient.auth.admin.updateUserById(
       session.user.id,
       {
-        user_metadata: { 
-          display_name: display_name.trim(),
-          name: display_name.trim()
-        }
+        user_metadata: updateData
       }
     );
 

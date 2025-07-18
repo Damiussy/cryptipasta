@@ -33,3 +33,25 @@ export interface MapData {
     description: string;
     image?: string;
 }
+
+export interface Comment {
+  id: string;
+  page_slug: string;
+  user_id: string;
+  content: string;
+  created_at: string;
+  updated_at: string;
+  user?: {
+    id: string;
+    email?: string;
+    user_metadata?: {
+      username?: string;
+      avatar_url?: string;
+    };
+  };
+}
+
+export interface CreateCommentData {
+  page_slug: string;
+  content: string;
+}

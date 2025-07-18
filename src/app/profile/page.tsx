@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { signOut, useSession } from 'next-auth/react';
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
+import AvatarUpload from '@/components/AvatarUpload';
 
 
 export default function ProfilePage() {
@@ -16,6 +17,7 @@ export default function ProfilePage() {
   const [editingName, setEditingName] = useState(false);
   const [newDisplayName, setNewDisplayName] = useState('');
   const [updating, setUpdating] = useState(false);
+  const [avatarUrl, setAvatarUrl] = useState<string>('');
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
@@ -23,9 +25,22 @@ export default function ProfilePage() {
     }
   }, [isLoading, isAuthenticated, router]);
 
-  // Variables dérivées
+  // Derived variables
   const username = user?.name || user?.email?.split('@')[0] || 'Anonymous';
   const email = user?.email || 'No email provided';
+
+  // Update URL when user change
+  useEffect(() => {
+    if (user?.avatar_url) {
+      setAvatarUrl(user.avatar_url);
+    }
+  }, [user]);
+
+  const handleAvatarUpdate = (newUrl: string) => {
+    setAvatarUrl(newUrl);
+    // Optional : update session
+    update();
+  };
 
   useEffect(() => {
     const fetchUserCreationDate = async () => {
@@ -46,7 +61,7 @@ export default function ProfilePage() {
         }
       } catch (error) {
         console.error('Error fetching creation date:', error);
-        // Fallback en cas d'erreur
+        // Fallback in case of error
         const joinDate = new Date();
         joinDate.setMonth(joinDate.getMonth() - Math.floor(Math.random() * 12));
         setMemberSince(joinDate.toLocaleDateString('en-EN', { 
@@ -60,7 +75,7 @@ export default function ProfilePage() {
     fetchUserCreationDate();
   }, [user]);
 
-  // Mettre à jour le titre dynamiquement
+  // Update title dynamically
   useEffect(() => {
     if (username && isAuthenticated) {
       document.title = `Cryptipasta - Profile of ${username}`;
@@ -87,6 +102,9 @@ export default function ProfilePage() {
         console.log('Success response:', data);
         
         await update();
+        
+        // Trigger comments refresh to update usernames
+        window.dispatchEvent(new CustomEvent('refreshComments'));
         
         setEditingName(false);
       } else {
@@ -134,16 +152,14 @@ export default function ProfilePage() {
 
           {/* Avatar Section */}
           <div className="center">
-            <div className="profile-image-container">
-              <div className="profile-avatar-placeholder">
-                <span className="linear-text-gradient sixtyfour-convergence-title">
-                  {username.charAt(0).toUpperCase()}
-                </span>
-              </div>
-            </div>
+            <AvatarUpload 
+              currentAvatarUrl={avatarUrl || user?.avatar_url || undefined}
+              onAvatarUpdate={handleAvatarUpdate}
+              username={username}
+            />
           </div>
 
-          {/* User Info avec option d'édition */}
+          {/* User Info with option edit */}
           <div className="linear-text-gradient bona-nova-sc-bold">
             {editingName ? (
               <div className="profile-edit-name-container">
